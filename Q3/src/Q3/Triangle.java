@@ -25,12 +25,18 @@ public class Triangle extends GeometricObject{
 	public double getArea() {
 	
 		double area = side3 * (Math.sqrt(Math.sqrt(side1) - Math.sqrt(side3/2)));
+		if (area <= 0){
+			getArea();
+		}
 		return area ;
 	}
 
 	@Override
-	public double getPerimeter() {
+	public double perimeter() {
 		double perimeter = side1 + side2 + side3; 
+		if (perimeter <= 0){
+			perimeter();
+		}
 		return perimeter;
 	}
 	
